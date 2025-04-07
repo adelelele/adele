@@ -1,15 +1,16 @@
 print("Dzer droši = brauc droši")
-transport_limit =float(input("ievadiet savu atļauto promiļu daudzumu:"))  # Atļautās promiles (piemēram, 0.5‰)
-if transport_limit == 0.0:
-    print("Galīgi traks esi? Tu nedrīksti necik dzert!")
-gender = input("Ievadiet savu dzimumu(vīrietis, sieviete):") # Lietotāja dzimums
+print("Ja skaitlī ir komats, tā vietā raksti punktu!")
+print("Kad ievadi, spied ENTER")
+
+transport_limit =float(input("ievadiet savu atļauto promiļu daudzumu vadot automašīnu:"))  # Atļautās promiles (piemēram, 0.5‰)
+gender = input("Ievadiet savu dzimumu(ja vīrietis - v, ja sieviete - s):") # Lietotāja dzimums
 weight = float(input("Ievadiet savu svaru(kg):"))  # Lietotāja svars kg
 hours = float(input("Ievadiet pēc cik stundām jums ir jāvada automašīna:"))
 elimination_rate = 0.12  # Vidēji 0.12‰ tiek sadalīts stundā
 
   
 
-if gender == "vīrietis":
+if gender == "v":
     gender_coef = 0.7 
 else: gender_coef = 0.6
 
@@ -60,9 +61,16 @@ if vodka_ml%2>=0.5:
 else:
     vodka_ml=math.floor(vodka_ml)
 if beer_ml%500 < 400:
-    print("Šovakar drīksti izdzert ", beer_ml , "ml ar alu - ", math.floor(beer_ml/500), "0.5 aliņus")
+    if math.floor(beer_ml/500)==1:
+        print("Šovakar drīksti izdzert ", beer_ml , "ml ar alu - ", math.floor(beer_ml/500), "0.5tilp aliņu")
+    else:
+        print("Šovakar drīksti izdzert ", beer_ml , "ml ar alu - ", math.floor(beer_ml/500), "0.5tilp aliņus")
 else:
-    print("Šovakar drīksti izdzert ", beer_ml , "ml ar alu - ", math.ceil(beer_ml/500), "0.5 aliņus")
+    if math.ceil(beer_ml/500)==1:
+        print("Šovakar drīksti izdzert ", beer_ml , "ml ar alu - ", math.ceil(beer_ml/500), "0.5tilp aliņu")
+    else:
+        print("Šovakar drīksti izdzert ", beer_ml , "ml ar alu - ", math.ceil(beer_ml/500), "0.5tilp aliņus")
+    
 
 print("VAI")
 if wine_ml%1000 >= 800:
