@@ -1,7 +1,8 @@
 print("Dzer droši = brauc droši")
-print("Ja skaitlī ir komats, tā vietā raksti punktu!")
-print("Kad ievadi, spied ENTER")
-print("!!!JŪSU ATĻAUTO PROMIĻU DAUDZUMS- ja būs jāvada taksis vai smagais kravas auto - 0.0; ja Jums ir zem 2 gadu stāžs-0.2; ja Jums ir virs 2 gadu stāžs-0.5!!!")
+print("*Šo programmu nav veidojuši profesisnāļi, tā ir veidota TIKAI UN VENĪGI izklaides nolūkiem!*")
+print("-Ja skaitlī ir komats, tā vietā raksti punktu!")
+print("-Kad ievadi, spied ENTER")
+print("-!!!JŪSU ATĻAUTO PROMIĻU DAUDZUMS- ja būs jāvada taksis vai smagais kravas auto - 0.0; ja Jums ir zem 2 gadu stāžs-0.2; ja Jums ir virs 2 gadu stāžs-0.5!!!")
 atbilde="JA"
 while atbilde=="JA" or atbilde=="ja" or atbilde=="Ja" or atbilde == "JĀ" or atbilde=="jā" or atbilde=="Jā":
     transport_limit =float(input("ievadiet savu atļauto promiļu daudzumu:")) # Atļautās promiles (piemēram, 0.5‰)
@@ -135,3 +136,4 @@ while atbilde=="JA" or atbilde=="ja" or atbilde=="Ja" or atbilde == "JĀ" or atb
         gimlet_daudz = math.floor(gimlet_daudz)
     print("5) ", gimlet_daudz, "Gimlet kokteiļus")
     atbilde=input("Vai vēlies spēlēt vēlreiz?Ievadi jā vai nē:")
+print("Akohola lietošanai ir negatīva ietekme uz jūsu veselību.")
