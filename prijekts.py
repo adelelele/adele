@@ -4,12 +4,20 @@ print("-Ja skaitlī ir komats, tā vietā raksti punktu!")
 print("-Kad ievadi, spied ENTER")
 print("-!!!JŪSU ATĻAUTO PROMIĻU DAUDZUMS- ja būs jāvada taksis vai smagais kravas auto - 0.0; ja Jums ir zem 2 gadu stāžs-0.2; ja Jums ir virs 2 gadu stāžs-0.5!!!")
 atbilde="JA"
+trans_pareiz=0
 while atbilde=="JA" or atbilde=="ja" or atbilde=="Ja" or atbilde == "JĀ" or atbilde=="jā" or atbilde=="Jā":
-    transport_limit =float(input("ievadiet savu atļauto promiļu daudzumu:")) # Atļautās promiles (piemēram, 0.5‰)
-    if transport_limit>0.5:
+    transport_limit =input("ievadiet savu atļauto promiļu daudzumu:") # Atļautās promiles (piemēram, 0.5‰)
+    try:
+        val=float(transport_limit)
+        trans_pareiz+=1
+    except ValueError:
+        print("SĀC NO JAUNA, IEVADĪJI NEPAREIZI!")
+        continue
+    
+    if float(transport_limit)>0.5:
         print("SĀC NO JAUNA, TĀDAS PROMILES NEVIENAM NAV ATĻAUTAS!!") 
         continue
-    elif transport_limit==0:
+    elif float(transport_limit)==0:
         print("Tu diemžēl nedrīksti šovakar dzert:(")
         break
     gender = input("Ievadiet savu dzimumu(ja vīrietis - v, ja sieviete - s):")# Lietotāja dzimums
@@ -30,7 +38,7 @@ while atbilde=="JA" or atbilde=="ja" or atbilde=="Ja" or atbilde == "JĀ" or atb
 
     # Maksimālās promiles, kas drīkst būt sākumā, lai pēc 12h būtu zem robežas
 
-    max_starting_promiles = transport_limit + (hours * elimination_rate)
+    max_starting_promiles = float(transport_limit) + (hours * elimination_rate)
 
 
 
